@@ -272,17 +272,4 @@ User → Login/Signup (JWT issued)
 
 ---
 
-## 🧑‍💻 Author
 
-**Shantanu** — Original project  
-**Priyanshu** — UI/UX redesign & deployment
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-> ⭐ If you found this useful, please give it a star on GitHub!
