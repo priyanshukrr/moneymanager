@@ -72,7 +72,7 @@ const Home = () => {
                         {/* Recent Transactions */}
                         <RecentTransactions 
                             transactions={dashboardData?.RecentTransactions} 
-                            onMore={()=> navigate("/Expense")}
+                            onMore={()=> navigate("/expense")}
                         />
                         {/* finance overview chart */}
                         <FinanceOverView

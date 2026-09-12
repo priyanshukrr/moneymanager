@@ -71,9 +71,9 @@ const Income = () => {
             toast.error("Please enter a name");
             return;
         }
-        if(!amount||isNaN(amount)|| Number((amount)<=0))
+        if(!amount||isNaN(amount)|| Number(amount) <= 0)
         {
-            toast.error('Amount should be a valid nnumber greater than 0');
+            toast.error('Amount should be a valid number greater than 0');
             return;
         }
         if(!date){

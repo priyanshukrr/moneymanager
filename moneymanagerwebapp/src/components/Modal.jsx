@@ -1,31 +1,35 @@
 import { X } from "lucide-react";
 
-const Modal = ({isOpen,onClose,children,title }) => {
-    if(!isOpen) return null;
+const Modal = ({ isOpen, onClose, children, title }) => {
+    if (!isOpen) return null;
+
     return (
-        <div className="fixed inset-0 z-50 flex justify-center items-center w-full h-full overflow-hidden bg-black/40 backgdrop-blur-sm">
-            <div className="relative p-4 w-full max-w-2xl max-h-[90vh]">
-                {/* Modal Header */}
-                <div className="relative bg-white rounded-xl shadow-2xl border border-gray-100">
-                    {/* Modal Content */}
-                    <div className="flex items-center justify-between p-5 md:p-6 border-b border-gray-100 rounded-t-xl">
-                        <h3 className="text-2l font-semibold text-gray-800">
+        <div className="fixed inset-0 z-50 flex justify-center items-center w-full h-full p-4 overflow-y-auto bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
+            <div className="relative w-full max-w-xl max-h-[90vh] my-auto">
+                <div className="relative bg-white rounded-2xl shadow-2xl border border-slate-100/80 overflow-hidden animate-in zoom-in-95 duration-200">
+                    {/* Modal Header */}
+                    <div className="flex items-center justify-between p-5 md:px-6 border-b border-slate-100">
+                        <h3 className="text-lg font-bold text-slate-900">
                             {title}
                         </h3>
 
-                        <button onClick={onClose  } type="button" className="text-gray-500 bg-gray-50 hover:bg-gray-100 hover:text-gray-700 rounded-lg text-sm w-9 h-9 flex  justify-center items-center transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        <button
+                            onClick={onClose}
+                            type="button"
+                            className="text-slate-400 hover:text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl p-2 transition-colors duration-200 cursor-pointer focus:outline-none"
+                        >
                             <X className="w-4 h-4" />
                         </button>
-
                     </div>
+
                     {/* Modal Body */}
-                    <div className="p-5 md:p-6 text-gray-700">
+                    <div className="p-5 md:p-6 text-slate-700 max-h-[calc(90vh-80px)] overflow-y-auto">
                         {children}
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Modal;

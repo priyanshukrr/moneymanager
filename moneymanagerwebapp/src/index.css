@@ -1,35 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --danger-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
 
 body {
     font-family: 'Outfit', sans-serif;
-    background-color: #fcfbfc;
+    background-color: #f8fafc;
+    color: #0f172a;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
 
 @layer components {
     .btn-primary {
-        @apply w-full bg-violet-600 text-white py-3 rounded-lg font-medium hover:bg-violet-700 transition;
-    }
-    .card-btn {
-        @apply flex items-center gap-2 px-3 py-1.5 border border-slate-500 rounded-md 
-           text-sm font-medium text-slate-700 hover:bg-purple-500 transition-colors 
-           active:scale-95 
-           cursor-pointer bg-[#e8f5e9] 
-          
-           border-none;
-    }
-    .card {
-    @apply bg-white border border-gray-100 rounded-xl p-6 shadow-sm;
-    }
-    .add-btn {
-        @apply flex items-center gap-[6px] px-4 py-2 bg-[#e8f5e9] text-[#1b5e20] 
-           border-none rounded-lg font-semibold cursor-pointer 
-           transition-colors duration-200 ease-in-out;
+        @apply w-full bg-indigo-600 text-white py-3 px-5 rounded-xl font-semibold hover:bg-indigo-700 active:scale-[0.98] transition-all duration-200 shadow-md shadow-indigo-200 cursor-pointer flex items-center justify-center gap-2;
     }
 
-    .add-btn:hover {
-        @apply bg-[#d4edda];
+    .btn-secondary {
+        @apply bg-slate-100 text-slate-700 py-2 px-4 rounded-xl font-medium hover:bg-slate-200 active:scale-[0.98] transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 border border-slate-200/80;
     }
     
+    .card {
+        @apply bg-white border border-slate-100/80 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 backdrop-blur-md;
+    }
+
+    .card-btn {
+        @apply flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 active:scale-95 cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-700;
+    }
+
+    .add-btn {
+        @apply flex items-center gap-2 px-4 py-2.5 bg-emerald-50 text-emerald-700 border border-emerald-200/60 rounded-xl font-semibold cursor-pointer hover:bg-emerald-100 hover:border-emerald-300 transition-all duration-200 active:scale-95 shadow-sm;
+    }
+
+    .glass-card {
+        @apply bg-white/90 backdrop-blur-md border border-white/40 shadow-xl shadow-slate-200/50 rounded-2xl;
+    }
+    
+    .input-field {
+        @apply w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all duration-200;
+    }
 }
